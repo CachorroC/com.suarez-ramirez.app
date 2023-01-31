@@ -48,8 +48,8 @@ const data = [
     icon: 'looks_two',
   },
   {
-    name: 'Movies',
-    page: '/movies',
+    name: 'Mqtt',
+    page: '/mqtt',
     icon: 'movie_edit',
   },
   {
@@ -77,14 +77,16 @@ export default function NavBar() {
   const getList = () => (
     <ul
       onClick={() => setOpen(false)}
-      className={styles.list}>
+      className={styles.list}
+    >
       {data.map((item, index) => (
         <Link
           href={item.page}
           key={index}
-          className={styles.item}>
+          className={styles.item}
+        >
           <p>{item.name}</p>
-          <span className='material-symbols-outlined'>
+          <span className="material-symbols-outlined">
             {item.icon}
           </span>
         </Link>
@@ -96,18 +98,20 @@ export default function NavBar() {
       <AppBar className={styles.navbar}>
         <Toolbar className={styles.toolbar}>
           <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            onClick={() => setOpen(true)}>
-            <span className='material-symbols-outlined'>
+            color="inherit"
+            aria-label="open drawer"
+            onClick={() => setOpen(true)}
+          >
+            <span className="material-symbols-outlined">
               menu
             </span>
           </IconButton>
-          <Link href='/new'>
+          <Link href="/new">
             <Fab
               className={styles.fab}
-              aria-label='add'>
-              <span className='material-symbols-outlined'>
+              aria-label="add"
+            >
+              <span className="material-symbols-outlined">
                 add_box
               </span>
             </Fab>
@@ -118,12 +122,12 @@ export default function NavBar() {
               <SearchIcon />
             </div>
             <StyledInputBase
-              placeholder='Search…'
+              placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
 
-          <span className='material-symbols-outlined'>
+          <span className="material-symbols-outlined">
             pets
           </span>
         </Toolbar>
@@ -132,7 +136,8 @@ export default function NavBar() {
       <Drawer
         open={open}
         anchor={'left'}
-        onClose={() => setOpen(false)}>
+        onClose={() => setOpen(false)}
+      >
         {getList()}
       </Drawer>
     </>
