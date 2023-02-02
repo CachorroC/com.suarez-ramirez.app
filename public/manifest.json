@@ -1,12 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "R&S Asesor Juridico",
   "short_name": "Asesor Juridico",
+  "start_url":".",
   "theme_color": "#536DFE",
   "background_color": "#303F9F",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
-  "scope": "/",
-  "start_url": "https://app.suarez-ramirez.com/",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
@@ -49,5 +49,6 @@
       "type": "image/png"
     }
   ],
-  "splash_pages": null
+  "splash_pages": null,
+  "description":"somos una firma de abogados especializados en cobranza de cartera", 
 }
