@@ -8,12 +8,16 @@ WORKDIR /home/node/app
 
 COPY package*.json /home/node/app/
 
-RUN npm install -g next sass 
+COPY pnpm-lock.yaml /home/node/app/
 
-RUN npm install
+COPY . /home/node/app/
 
-RUN npm audit fix --force
+RUN npm install -g pnpm next sass
+
+RUN pnpm install
 
 EXPOSE 3000
+
+RUN pnpm run build
 
 CMD [ "next", "start" ]
