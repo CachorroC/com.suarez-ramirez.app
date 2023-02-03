@@ -18,6 +18,5 @@ RUN pnpm install
 
 EXPOSE 3000
 
-RUN pnpm run build
 
 CMD [ "next", "start" ]
