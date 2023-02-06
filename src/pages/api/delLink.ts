@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import clientPromise from '../../lib/mongodb';
 import { ObjectId } from 'mongodb';
 
-export default async function getLink(
+export default async function delLink(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -11,12 +11,12 @@ export default async function getLink(
     const db = client.db('posts');
     const { id } = req.query;
 
-    const post = await db.collection('posts').findOne({
-      _id: ObjectId,
+    const post = await db.collection('posts').deleteOne({
+      _id: ObjectId(id),
     });
 
     res.json(post);
-  } catch (e: any | undefined) {
+  } catch (e) {
     console.error(e);
     throw new Error(e).message;
   }
