@@ -1,12 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = require('next-pwa')({
+  dest: 'public',
+});
+
+module.exports = nextConfig({
   reactStrictMode: true,
-  eslint: {
+  /* eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
-  }, 
+  },  */
   images: {
     remotePatterns: [
       {
@@ -17,6 +21,4 @@ const nextConfig = {
       },
     ],
   },
-};
-
-module.exports = nextConfig;
+});

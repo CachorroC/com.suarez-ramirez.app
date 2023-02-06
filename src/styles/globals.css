@@ -1,6 +1,9 @@
 /** @format */
 
 @import url('theme.css');
+* {
+  box-sizing: content-box;
+}
 :root {
   --max-width: 1100px;
   --border-radius: 12px;

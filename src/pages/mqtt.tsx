@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import type { MqttClient } from 'mqtt';
 import useMqtt from '../lib/useMqtt';
+import type ProcessEnv from '../types/environment.d.ts';
 
 export default function Home() {
   const [incommingMessages, setIncommingMessages] =
@@ -69,7 +70,8 @@ export default function Home() {
       <button
         onClick={() =>
           publishMessages(mqttClientRef.current)
-        }>
+        }
+      >
         Publish Test Messages
       </button>
       <button onClick={() => clearMessages()}>

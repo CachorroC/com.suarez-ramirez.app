@@ -1,18 +1,5 @@
 /** @format */
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' -25,
-    'opsz' 24;
-  color: red;
-  &:hover,
-  &:active {
-    font-variation-settings: 'FILL' 1, 'wght' 400,
-      'GRAD' 200, 'opsz' 48;
-  }
-  @media (max-width: 600px) {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0,
-      'opsz' 48;
-  }
-}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -67,18 +54,18 @@
     padding: 1rem 1.2rem;
     margin: 5vh;
     border-radius: var(--border-radius);
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant);
     border: 1px solid rgba(var(--card-border-rgb), 0);
     transition: background 200ms, border 200ms;
     box-shadow: var(--md-elevation-2);
 
     &:hover,
     &:active {
-      background-color: var(--md-sys-color-primary);
+      background-color: var(--md-sys-color-secondary);
       box-shadow: var(--md-elevation-8);
-      color: var(--md-sys-color-on-primary);
-      border: 1px solid rgba(var(--card-border-rgb), 0.15);
+      color: var(--md-sys-color-on-secondaru);
+      border: 5px solid var(--md-sys-color-outline);
       span {
         font-variation-settings: 'FILL' 1, 'wght' 400,
           'GRAD' 200, 'opsz' 48;
