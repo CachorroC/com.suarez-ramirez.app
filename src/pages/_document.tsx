@@ -9,7 +9,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <meta charSet="utf-8" />
+        <meta charSet="utf-8" />
         <meta
           httpEquiv="X-UA-Compatible"
           content="IE=edge"

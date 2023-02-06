@@ -1,7 +1,7 @@
 /** @format */
 
 import clientPromise from '../lib/mongodb';
-import  { intLink } from '../types/link.interface';
+import { intLink } from '../types/link.interface';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 import Head from 'next/head';
@@ -20,12 +20,13 @@ export default function Home({
           <Link
             key={link.name}
             href={link.url}
-            className={styles.link}>
+            className={styles.link}
+          >
             <li className={styles.card}>
               <h2 className={styles.linkname}>
                 {link.name}
               </h2>
-              <span className='material-symbols-outlined'>
+              <span className="material-symbols-outlined">
                 {link.icon}
               </span>
             </li>
