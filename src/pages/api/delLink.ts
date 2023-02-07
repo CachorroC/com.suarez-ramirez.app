@@ -11,11 +11,11 @@ export default async function delLink(
     const db = client.db('links');
     const { id } = req.query;
 
-    const post = await db.collection('posts').deleteOne({
+    const link = await db.collection('links').deleteOne({
       _id: ObjectId,
     });
 
-    res.json(post);
+    res.json(link);
   } catch (e: any | undefined) {
     console.error(e);
     throw new Error(e).message;
