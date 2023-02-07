@@ -8,14 +8,14 @@ export default async function getLink(
 ) {
   try {
     const client = await clientPromise;
-    const db = client.db('posts');
+    const db = client.db('links');
     const { id } = req.query;
 
-    const post = await db.collection('posts').findOne({
+    const link = await db.collection('links').findOne({
       _id: ObjectId,
     });
 
-    res.json(post);
+    res.json(link);
   } catch (e: any | undefined) {
     console.error(e);
     throw new Error(e).message;

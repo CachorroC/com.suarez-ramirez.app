@@ -1,12 +1,13 @@
 /** @format */
 
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
 }
 
 .description {
