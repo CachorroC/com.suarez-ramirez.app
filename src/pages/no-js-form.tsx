@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import styles from '../styles/Home.module.scss'
+import Link from 'next/link';
+import styles from '../styles/Home.module.scss';
 
 export default function Form() {
   return (
@@ -9,7 +9,9 @@ export default function Form() {
       </h1>
       <p className={styles.description}>
         Get started by looking at{' '}
-        <code className={styles.code}>pages/no-js-form.js</code>
+        <code className={styles.code}>
+          pages/no-js-form.js
+        </code>
       </p>
 
       {/*
@@ -19,13 +21,26 @@ export default function Form() {
        * of the page containing the form — the current page.
        * method: The HTTP method to submit the form with. (case insensitive)
        */}
-      <form action="/api/form" method="post">
+      <form
+        action="/api/form"
+        method="post"
+      >
         <label htmlFor="first">First Name</label>
-        <input type="text" id="first" name="first" required />
+        <input
+          type="text"
+          id="first"
+          name="first"
+          required
+        />
         <label htmlFor="last">Last Name</label>
-        <input type="text" id="last" name="last" required />
+        <input
+          type="text"
+          id="last"
+          name="last"
+          required
+        />
         <button type="submit">Submit</button>
       </form>
     </div>
-  )
+  );
 }

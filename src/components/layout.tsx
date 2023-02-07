@@ -1,18 +1,15 @@
 // components/layout.js
-
+import styles from "../styles/Home.module.scss"
 import Navbar from './navbar';
 import Footer from './footer';
-import { ReactElement } from 'react';
+import React from 'react';
 
-export default function Layout({
-  children,
-}: {
-  children: ReactElement;
-}) {
+export default function Layout(props: any) {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className={styles.main}>{props.children}</main>
+
       <Footer />
     </>
   );
