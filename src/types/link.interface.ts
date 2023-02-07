@@ -1,6 +1,6 @@
 /** @format */
 
-import { ObjectId } from 'mongodb';
+import { ObjectId } from "mongodb";
 
 /** @format */
 export type intLink = {

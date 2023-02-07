@@ -1,9 +1,9 @@
 /** @format */
 
-import { useState, useRef } from 'react';
-import type { MqttClient } from 'mqtt';
-import useMqtt from '../lib/useMqtt';
-import type ProcessEnv from '../types/environment.d.ts';
+import { useState, useRef } from "react";
+import type { MqttClient } from "mqtt";
+import useMqtt from "../lib/useMqtt";
+import type ProcessEnv from "../types/environment.d.ts";
 
 export default function Home() {
   const [incommingMessages, setIncommingMessages] =
@@ -20,7 +20,7 @@ export default function Home() {
 
   const incommingMessageHandlers = useRef([
     {
-      topic: 'next',
+      topic: "next",
       handler: (msg: string) => {
         addMessage(msg);
       },
@@ -45,13 +45,13 @@ export default function Home() {
   const publishMessages = (client: any) => {
     if (!client) {
       console.log(
-        '(publishMessages) Cannot publish, mqttClient: ',
+        "(publishMessages) Cannot publish, mqttClient: ",
         client
       );
       return;
     }
 
-    client.publish('next', '1st message from component');
+    client.publish("next", "1st message from component");
   };
 
   return (

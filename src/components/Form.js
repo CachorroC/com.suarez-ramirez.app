@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import { mutate } from 'swr';
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { mutate } from "swr";
 
 const Form = ({ formId, petForm, forNewPet = true }) => {
   const router = useRouter();
-  const contentType = 'application/json';
+  const contentType = "application/json";
   const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const [form, setForm] = useState({
     name: petForm.name,
@@ -26,10 +26,10 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
 
     try {
       const res = await fetch(`/api/pets/${id}`, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
           Accept: contentType,
-          'Content-Type': contentType,
+          "Content-Type": contentType,
         },
         body: JSON.stringify(form),
       });
@@ -42,20 +42,20 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
       const { data } = await res.json();
 
       mutate(`/api/pets/${id}`, data, false); // Update the local data without a revalidation
-      router.push('/');
+      router.push("/");
     } catch (error) {
-      setMessage('Failed to update pet');
+      setMessage("Failed to update pet");
     }
   };
 
   /* The POST method adds a new entry in the mongodb database. */
   const postData = async (form) => {
     try {
-      const res = await fetch('/api/pets', {
-        method: 'POST',
+      const res = await fetch("/api/pets", {
+        method: "POST",
         headers: {
           Accept: contentType,
-          'Content-Type': contentType,
+          "Content-Type": contentType,
         },
         body: JSON.stringify(form),
       });
@@ -65,16 +65,16 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
         throw new Error(res.status);
       }
 
-      router.push('/');
+      router.push("/");
     } catch (error) {
-      setMessage('Failed to add pet');
+      setMessage("Failed to add pet");
     }
   };
 
   const handleChange = (e) => {
     const target = e.target;
     const value =
-      target.name === 'poddy_trained'
+      target.name === "poddy_trained"
         ? target.checked
         : target.value;
     const name = target.name;
@@ -88,12 +88,12 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
   /* Makes sure pet info is filled for pet name, owner name, species, and image url*/
   const formValidate = () => {
     let err = {};
-    if (!form.name) err.name = 'Name is required';
+    if (!form.name) err.name = "Name is required";
     if (!form.owner_name)
-      err.owner_name = 'Owner is required';
-    if (!form.species) err.species = 'Species is required';
+      err.owner_name = "Owner is required";
+    if (!form.species) err.species = "Species is required";
     if (!form.image_url)
-      err.image_url = 'Image URL is required';
+      err.image_url = "Image URL is required";
     return err;
   };
 

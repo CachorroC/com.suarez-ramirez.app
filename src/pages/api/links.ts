@@ -1,10 +1,10 @@
 /** @format */
 
-import clientPromise from '../../lib/mongodb';
+import clientPromise from "../../lib/mongodb";
 import {
   NextApiRequest,
   NextApiResponse,
-} from 'next/types';
+} from "next/types";
 
 export default async function Links(
   req: NextApiRequest,
@@ -12,10 +12,10 @@ export default async function Links(
 ) {
   try {
     const client = await clientPromise;
-    const db = client.db('test');
+    const db = client.db("test");
 
     const links = await db
-      .collection('links')
+      .collection("links")
       .find({})
       .toArray();
 

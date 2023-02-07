@@ -1,6 +1,6 @@
 /** @format */
 
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 
 import {
   AppBar,
@@ -10,63 +10,63 @@ import {
   IconButton,
   InputBase,
   Toolbar,
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import Link from 'next/link';
-import * as React from 'react';
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import Link from "next/link";
+import * as React from "react";
 
-import styles from '../styles/navbar.module.scss';
+import styles from "../styles/navbar.module.scss";
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
+  color: "inherit",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
   },
 }));
 
 const data = [
-  { name: 'Home', page: '/', icon: 'cottage' },
+  { name: "Home", page: "/", icon: "cottage" },
   {
-    name: 'About',
-    page: '/about',
-    icon: 'unknown_document',
+    name: "About",
+    page: "/about",
+    icon: "unknown_document",
   },
   {
-    name: 'First Post',
-    page: '/post/first',
-    icon: 'looks_one',
+    name: "First Post",
+    page: "/post/first",
+    icon: "looks_one",
   },
   {
-    name: 'Second Post',
-    page: '/post/second',
-    icon: 'looks_two',
+    name: "Second Post",
+    page: "/post/second",
+    icon: "looks_two",
   },
   {
-    name: 'Mqtt',
-    page: '/mqtt',
-    icon: 'movie_edit',
+    name: "Mqtt",
+    page: "/mqtt",
+    icon: "movie_edit",
   },
   {
-    name: 'Pets',
-    page: '/pets',
-    icon: 'pets',
+    name: "Pets",
+    page: "/pets",
+    icon: "pets",
   },
-  { name: 'Top', page: '/top', icon: 'pan_tool_alt' },
+  { name: "Top", page: "/top", icon: "pan_tool_alt" },
   {
-    name: 'Api',
-    page: '/api/movies',
-    icon: 'movie_edit',
+    name: "Api",
+    page: "/api/movies",
+    icon: "movie_edit",
   },
   {
-    name: 'Trash',
-    page: '/api',
-    icon: 'delete',
+    name: "Trash",
+    page: "/api",
+    icon: "delete",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function NavBar() {
             </div>
             <StyledInputBase
               placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
             />
           </div>
 
@@ -135,7 +135,7 @@ export default function NavBar() {
       <Toolbar />
       <Drawer
         open={open}
-        anchor={'left'}
+        anchor={"left"}
         onClose={() => setOpen(false)}
       >
         {getList()}

@@ -1,10 +1,10 @@
 /** @format */
 
-import clientPromise from '../../lib/mongodb';
+import clientPromise from "../../lib/mongodb";
 import {
   NextApiRequest,
   NextApiResponse,
-} from 'next/types';
+} from "next/types";
 
 export default async function Movies(
   req: NextApiRequest,
@@ -12,10 +12,10 @@ export default async function Movies(
 ) {
   try {
     const client = await clientPromise;
-    const db = client.db('sample_mflix');
+    const db = client.db("sample_mflix");
 
     const movies = await db
-      .collection('movies')
+      .collection("movies")
       .find({})
       .sort({ metacritic: -1 })
       .limit(10)

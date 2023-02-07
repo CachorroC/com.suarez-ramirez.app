@@ -1,6 +1,6 @@
-import type { MqttClient, IClientOptions } from 'mqtt';
-import MQTT from 'mqtt';
-import { useEffect, useRef } from 'react';
+import type { MqttClient, IClientOptions } from "mqtt";
+import MQTT from "mqtt";
+import { useEffect, useRef } from "react";
 
 interface useMqttProps {
   uri: string;
@@ -17,7 +17,7 @@ function useMqtt({
   options = {},
   topicHandlers = [
     {
-      topic: '',
+      topic: "",
       handler: ({ topic, payload, packet }) => {},
     },
   ],
@@ -35,7 +35,7 @@ function useMqtt({
         ? MQTT.connect(uri, options)
         : MQTT.connect(uri);
     } catch (error) {
-      console.error('error', error);
+      console.error("error", error);
     }
 
     const client = clientRef.current;
@@ -43,7 +43,7 @@ function useMqtt({
       client?.subscribe(th.topic);
     });
     client?.on(
-      'message',
+      "message",
       (topic: string, rawPayload: any, packet: any) => {
         const th = topicHandlers.find(
           (t) => t.topic === topic
@@ -58,7 +58,7 @@ function useMqtt({
       }
     );
 
-    client?.on('connect', () => {
+    client?.on("connect", () => {
       if (onConnectedHandler) onConnectedHandler(client);
     });
 
@@ -70,7 +70,7 @@ function useMqtt({
         client.end();
       }
     };
-  }, []);
+  }, [onConnectedHandler, options, topicHandlers, uri]);
 }
 
 export default useMqtt;

@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import clientPromise from '../../lib/mongodb';
-import { ObjectId } from 'mongodb';
+import { NextApiRequest, NextApiResponse } from "next";
+import clientPromise from "../../lib/mongodb";
+import { ObjectId } from "mongodb";
 
 export default async function getLink(
   req: NextApiRequest,
@@ -8,10 +8,10 @@ export default async function getLink(
 ) {
   try {
     const client = await clientPromise;
-    const db = client.db('links');
+    const db = client.db("links");
     const { id } = req.query;
 
-    const link = await db.collection('links').findOne({
+    const link = await db.collection("links").findOne({
       _id: ObjectId,
     });
 

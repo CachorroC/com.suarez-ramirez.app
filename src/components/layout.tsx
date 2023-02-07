@@ -1,8 +1,8 @@
 // components/layout.js
-import styles from "../styles/Home.module.scss"
-import Navbar from './navbar';
-import Footer from './footer';
-import React from 'react';
+import styles from "../styles/Home.module.scss";
+import Navbar from "./navbar";
+import Footer from "./footer";
+import React from "react";
 
 export default function Layout(props: any) {
   return (

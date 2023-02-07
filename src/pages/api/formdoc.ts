@@ -1,8 +1,8 @@
-import clientPromise from '../../lib/mongodb';
+import clientPromise from "../../lib/mongodb";
 import {
   NextApiRequest,
   NextApiResponse,
-} from 'next/types';
+} from "next/types";
 
 interface Haiku {
   title: string;
@@ -15,14 +15,14 @@ export default async function run(
 ) {
   try {
     const client = await clientPromise;
-    const db = client.db('insertDB');
+    const db = client.db("insertDB");
     // Specifying a Schema is optional, but it enables type hints on
     // finds and inserts
-    const haiku = db.collection<Haiku>('haiku');
+    const haiku = db.collection<Haiku>("haiku");
     const result = await haiku.insertOne({
-      title: 'Record of a Shriveled Datum',
+      title: "Record of a Shriveled Datum",
       content:
-        'No bytes, no problem. Just insert a document, in MongoDB',
+        "No bytes, no problem. Just insert a document, in MongoDB",
     });
     console.log(
       `A document was inserted with the _id: ${result.insertedId}`

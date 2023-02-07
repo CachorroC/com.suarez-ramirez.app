@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Layout from '../components/layout';
-import { intLink } from '../types/link.interface';
+import { useState } from "react";
+import Layout from "../components/layout";
+import { intLink } from "../types/link.interface";
 type Props = {
   links: [intLink];
 };
@@ -8,7 +8,7 @@ type Props = {
 export async function getServerSideProps() {
   try {
     let response = await fetch(
-      'http://localhost:3000/api/getLinks'
+      "http://localhost:3000/api/getLinks"
     );
     let links = await response.json();
 
@@ -25,12 +25,12 @@ export default function Links(props: Props) {
   const handleDeleteLink = async (linkId: string) => {
     try {
       let response = await fetch(
-        'http://localhost:3000/api/delLink?id=' + linkId,
+        "http://localhost:3000/api/delLink?id=" + linkId,
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            Accept: 'application/json, text/plain, */*',
-            'Content-Type': 'application/json',
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
           },
         }
       );
@@ -38,7 +38,7 @@ export default function Links(props: Props) {
       window.location.reload();
     } catch (error) {
       console.log(
-        'An error occurred while deleting ',
+        "An error occurred while deleting ",
         error
       );
     }

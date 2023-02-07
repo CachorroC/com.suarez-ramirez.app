@@ -1,8 +1,8 @@
 import {
   NextApiRequest,
   NextApiResponse,
-} from 'next/types';
-import clientPromise from '../../lib/mongodb';
+} from "next/types";
+import clientPromise from "../../lib/mongodb";
 
 export default async function addLink(
   req: NextApiRequest,
@@ -10,10 +10,10 @@ export default async function addLink(
 ) {
   try {
     const client = await clientPromise;
-    const db = client.db('test');
+    const db = client.db("test");
     const { name, url, state, icon, lastUpdate } = req.body;
 
-    const link = await db.collection('links').insertOne({
+    const link = await db.collection("links").insertOne({
       name,
       url,
       state,

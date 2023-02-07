@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import clientPromise from '../../lib/mongodb';
-import { ObjectId } from 'mongodb';
+import { NextApiRequest, NextApiResponse } from "next";
+import clientPromise from "../../lib/mongodb";
+import { ObjectId } from "mongodb";
 
 export default async function delLink(
   req: NextApiRequest,
@@ -8,10 +8,10 @@ export default async function delLink(
 ) {
   try {
     const client = await clientPromise;
-    const db = client.db('links');
+    const db = client.db("links");
     const { id } = req.query;
 
-    const link = await db.collection('links').deleteOne({
+    const link = await db.collection("links").deleteOne({
       _id: ObjectId,
     });
 

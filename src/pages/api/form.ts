@@ -2,7 +2,7 @@
 import {
   NextApiRequest,
   NextApiResponse,
-} from 'next/types';
+} from "next/types";
 type ResponseData = {
   data: string;
 };
@@ -12,12 +12,12 @@ export default function handler(
 ) {
   const body = req.body;
 
-  console.log('body: ', body);
+  console.log("body: ", body);
 
   if (!body.first || !body.last) {
     return res
       .status(400)
-      .json({ data: 'First or last name not found' });
+      .json({ data: "First or last name not found" });
   }
 
   res

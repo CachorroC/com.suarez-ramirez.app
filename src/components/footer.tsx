@@ -1,6 +1,6 @@
 /** @format */
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by{' '}
+        Powered by{" "}
         <Image
           width={240}
           height={240}

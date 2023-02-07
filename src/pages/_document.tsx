@@ -3,7 +3,7 @@ import {
   Head,
   Main,
   NextScript,
-} from 'next/document';
+} from "next/document";
 
 export default function Document() {
   return (
@@ -26,8 +26,6 @@ export default function Document() {
           name="keywords"
           content="Keywords"
         />
-        <title>R&S Asesoria Juridica</title>
-
         <link
           rel="manifest"
           href="/manifest.json"

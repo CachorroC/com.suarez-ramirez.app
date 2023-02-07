@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import styles from '../styles/Home.module.scss';
+import Link from "next/link";
+import styles from "../styles/Home.module.scss";
 
 export default function Form() {
   return (
@@ -8,7 +8,7 @@ export default function Form() {
         Form <Link href="/">without</Link> JavaScript.
       </h1>
       <p className={styles.description}>
-        Get started by looking at{' '}
+        Get started by looking at{" "}
         <code className={styles.code}>
           pages/no-js-form.js
         </code>

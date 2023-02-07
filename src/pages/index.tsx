@@ -1,11 +1,11 @@
 /** @format */
 
-import clientPromise from '../lib/mongodb';
-import { intLink } from '../types/link.interface';
-import Link from 'next/link';
-import styles from '../styles/Home.module.scss';
-import Head from 'next/head';
-import 'material-symbols';
+import clientPromise from "../lib/mongodb";
+import { intLink } from "../types/link.interface";
+import Link from "next/link";
+import styles from "../styles/Home.module.scss";
+import Head from "next/head";
+import "material-symbols";
 
 // posts will be populated at build time by getStaticProps()
 export default function Home({
@@ -32,7 +32,7 @@ export default function Home({
             </li>
           </Link>
         ))}
-      </ul>{' '}
+      </ul>{" "}
     </>
   );
 }
@@ -46,9 +46,9 @@ export async function getStaticProps() {
 
   try {
     const client = await clientPromise;
-    const db = client.db('test');
+    const db = client.db("test");
     const links = await db
-      .collection('links')
+      .collection("links")
       .find({})
 
       .limit(20)
