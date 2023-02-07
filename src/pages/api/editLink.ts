@@ -14,7 +14,7 @@ export default async function editLink(
 
     const post = await db.collection('links').updateOne(
       {
-        _id: ObjectId(id),
+        _id: ObjectId,
       },
       {
         $set: {
