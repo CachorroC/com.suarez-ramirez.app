@@ -1,4 +1,5 @@
 /** @format */
+import styles from "../styles/navbar.module.scss";
 
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -14,8 +15,6 @@ import {
 import { styled } from "@mui/material/styles";
 import Link from "next/link";
 import * as React from "react";
-
-import styles from "../styles/navbar.module.scss";
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
