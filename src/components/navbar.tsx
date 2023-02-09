@@ -1,8 +1,7 @@
 /** @format */
 import styles from "../styles/navbar.module.scss";
-
+import "../styles/navbar.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
-
 import {
   AppBar,
   Box,
@@ -94,8 +93,8 @@ export default function NavBar() {
   );
   return (
     <>
-      <AppBar className={styles.navbar}>
-        <Toolbar className={styles.toolbar}>
+      <AppBar className="${styles.navbar}">
+        <Toolbar className="toolbar">
           <IconButton
             color="inherit"
             aria-label="open drawer"

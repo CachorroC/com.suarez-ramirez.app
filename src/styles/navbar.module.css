@@ -24,12 +24,12 @@
   background-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary);
 }
-@media only screen and (min-width: 600px) {
+@media screen and (min-width: 600px) {
   .navbar {
     top: 0;
   }
 }
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
   }
