@@ -1,0 +1,2 @@
+sudo chown $USER:$USER /home/$USER/ftp/files
+echo "vsftpd test file" | sudo tee /home/$USER/ftp/files/test.txt
