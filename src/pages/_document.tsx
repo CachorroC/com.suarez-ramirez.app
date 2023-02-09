@@ -1,11 +1,9 @@
-import  {
+import {
   Html,
   Head,
   Main,
   NextScript,
 } from "next/document";
-
-
 
 export default function Document() {
   return (
@@ -16,7 +14,7 @@ export default function Document() {
           httpEquiv="X-UA-Compatible"
           content="IE=edge"
         />
-        
+
         <meta
           name="description"
           content="Description"

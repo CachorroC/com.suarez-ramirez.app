@@ -9,14 +9,20 @@
   display: flex;
 }
 .list .item > span {
-  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0,
+    "opsz" 24;
   color: red;
 }
-.list .item:hover, .list .item:active {
-  background-color: var(--md-sys-color-on-tertiary-container);
+.list .item:hover,
+.list .item:active {
+  background-color: var(
+    --md-sys-color-on-tertiary-container
+  );
 }
-.list .item:hover > span, .list .item:active > span {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 200, "opsz" 48;
+.list .item:hover > span,
+.list .item:active > span {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 200,
+    "opsz" 48;
 }
 
 .navbar {
@@ -43,7 +49,8 @@
   color: var(--md-sys-color-on-primary-container);
   box-shadow: var(--md-elevation-6);
 }
-.navbar .toolbar .fab:hover, .navbar .toolbar .fab:active {
+.navbar .toolbar .fab:hover,
+.navbar .toolbar .fab:active {
   background-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary);
 }
@@ -75,7 +82,10 @@
   margin-left: 0;
   width: auto;
   border-radius: 4px;
-  background-color: rgba(var(--md-sys-color-on-primary), 0.15);
+  background-color: rgba(
+    var(--md-sys-color-on-primary),
+    0.15
+  );
 }
 @media only screen and (max-width: 600px) {
   .navbar .toolbar .search {
@@ -84,7 +94,10 @@
   }
 }
 .navbar .toolbar .search:hover {
-  background-color: rgba(var(--md-sys-color-on-primary), 0.25);
+  background-color: rgba(
+    var(--md-sys-color-on-primary),
+    0.25
+  );
 }
 .navbar .toolbar .search .searchiconwrapper {
   padding: 0 2em;

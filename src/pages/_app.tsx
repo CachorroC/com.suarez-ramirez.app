@@ -20,11 +20,10 @@ export default function App({
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
       </Head>
-      
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
-     
+
+      <Navbar />
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
 }
