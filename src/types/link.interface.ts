@@ -15,3 +15,4 @@ export type intLink = {
 export interface LastUpdate {
   $timestamp: string;
 }
+export type Open = Boolean
