@@ -1,35 +1,24 @@
-// @ts-check
-const withOffline = require('next-offline')
+/** @type {import('next').NextConfig} */
+const nextConfig = require("next-pwa")({
+  dest: "public",
+});
 
-/**
- * @type {import('next').NextConfig}
- **/
-const nextConfig = {
-  workboxOpts: {
-    swDest: process.env.NEXT_EXPORT
-      ? 'service-worker.js'
-      : 'static/service-worker.js',
-    runtimeCaching: [
+module.exports = nextConfig({
+  reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    remotePatterns: [
       {
-        urlPattern: /^https?.*/,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'offlineCache',
-          expiration: {
-            maxEntries: 200,
-          },
-        },
+        protocol: "http",
+        hostname: "localhost",
+        port: "3000",
+        pathname: "/images/**",
       },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/service-worker.js',
-        destination: '/_next/static/service-worker.js',
-      },
-    ]
-  },
-}
-
-module.exports = withOffline(nextConfig)
+});
