@@ -1,7 +1,9 @@
 /** @format */
-import styles from "../styles/navbar.module.scss";
 import "../styles/navbar.module.scss";
+import styles from "../styles/navbar.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
+import { MaterialSymbol } from "material-symbols";
+import Icon from "react-material-symbols/outlined";
 import {
   AppBar,
   Box,
@@ -84,16 +86,16 @@ export default function NavBar() {
           className={styles.item}
         >
           <p>{item.name}</p>
-          <span className="material-symbols-outlined">
+          <Icon className="material-symbols-outlined">
             {item.icon}
-          </span>
+          </Icon>
         </Link>
       ))}
     </ul>
   );
   return (
     <>
-      <AppBar className="${styles.navbar}">
+      <AppBar className="navbar">
         <Toolbar className="toolbar">
           <IconButton
             color="inherit"
