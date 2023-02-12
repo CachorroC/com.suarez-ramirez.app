@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/google-font-display */
+import { colors } from "@mui/material";
 import {
   Html,
   Head,
@@ -46,7 +47,7 @@ export default function Document() {
         ></link>
         <meta
           name="theme-color"
-          content="#317EFB"
+          content="#fff"
         />
         <link
           rel="stylesheet"
@@ -94,7 +95,7 @@ export default function Document() {
         />
         <meta
           name="msapplication-TileColor"
-          content="#2B5797"
+          content="#fff"
         />
         <meta
           name="msapplication-tap-highlight"
@@ -102,7 +103,7 @@ export default function Document() {
         />
         <meta
           name="theme-color"
-          content="#000000"
+          content="#fff"
         />
         <link
           rel="apple-touch-icon"
@@ -143,7 +144,7 @@ export default function Document() {
         <link
           rel="mask-icon"
           href="/icons/safari-pinned-tab.svg"
-          color="#5bbad5"
+          color="#fff"
         />
         <link
           rel="shortcut icon"

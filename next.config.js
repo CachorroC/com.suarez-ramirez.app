@@ -5,12 +5,12 @@ const nextConfig = require("next-pwa")({
 
 module.exports = nextConfig({
   reactStrictMode: true,
-  eslint: {
+  /* eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
+  },  */
   images: {
     remotePatterns: [
       {

@@ -1,9 +1,35 @@
 /** @format */
 import "../styles/navbar.module.scss";
 import styles from "../styles/navbar.module.scss";
+import SearchIcon from "@mui/icons-material/Search";
+import { MaterialSymbol } from "material-symbols";
+import Icon from "react-material-symbols/outlined";
+import {
+  AppBar,
+  Box,
+  Drawer,
+  Fab,
+  IconButton,
+  InputBase,
+  Toolbar,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
 import Link from "next/link";
-import type Open from "../types/link.interface"
-import React from "react";
+import * as React from "react";
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
+    },
+  },
+}));
+
 const data = [
   { name: "Home", page: "/", icon: "cottage" },
   {
@@ -44,7 +70,6 @@ const data = [
   },
 ];
 
-
 //& default export
 export default function NavBar() {
   const [open, setOpen] = React.useState(false);
@@ -61,56 +86,63 @@ export default function NavBar() {
           className={styles.item}
         >
           <p>{item.name}</p>
-          <span
+          <Icon
             className="material-symbols-outlined"
-            aria-label="open drawer"
-            onClick={() => setOpen(true)}
+            icon={"visibility"}
           >
             {item.icon}
-          </span>
+          </Icon>
         </Link>
       ))}
     </ul>
   );
   return (
     <>
-      <nav className="navbar">
-        <span className="material-symbols-outlined">
-          menu
-        </span>
-
-        <Link href="/new">
-          <div
-            className={styles.fab}
-            aria-label="add"
+      <AppBar className="navbar">
+        <Toolbar className="toolbar">
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={() => setOpen(true)}
           >
             <span className="material-symbols-outlined">
-              add_box
+              menu
             </span>
+          </IconButton>
+          <Link href="/new">
+            <Fab
+              className={styles.fab}
+              aria-label="add"
+            >
+              <span className="material-symbols-outlined">
+                add_box
+              </span>
+            </Fab>
+          </Link>
+          <Box sx={{ flexGrow: 1 }} />
+          <div className={styles.search}>
+            <div className={styles.searchiconwrapper}>
+              <SearchIcon />
+            </div>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+            />
           </div>
-        </Link>
-      
-        <div className={styles.search}>
-          <div className={styles.searchiconwrapper}>
-            <span className="material-symbols-outlined">
-              search
-            </span>
-          </div>
-          
-        </div>
 
-        <span className="material-symbols-outlined">
-          pets
-        </span>
-      </nav>
-      
-      <div
+          <span className="material-symbols-outlined">
+            pets
+          </span>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+      <Drawer
         open={open}
         anchor={"left"}
         onClose={() => setOpen(false)}
       >
         {getList()}
-      </div>
+      </Drawer>
     </>
   );
 }
